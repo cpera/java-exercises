@@ -16,16 +16,17 @@ public class Area {
         String str = in.nextLine();
         try {
             radius = Double.parseDouble(str);
+            while (radius < 0)
+            {
+                System.out.println("Radius should not be a negative number. Please enter a valid radius:");
+                radius = in.nextDouble();
+            }
         }
         catch (Exception ex) {
             System.out.println(ex.getMessage() + " not a valid input for radius" );
             return;
         }
-        while (radius < 0)
-        {
-            System.out.println("Radius should not be a negative number. Please enter a valid radius:");
-            radius = in.nextDouble();
-        }
+
 
         System.out.println("Area of the Circle with radius " + radius + " is: " + Area.areaOfCircle(radius));
 
